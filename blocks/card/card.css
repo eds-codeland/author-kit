@@ -1,84 +1,128 @@
 .card {
-  --spacing-default: var(--spacing-l);
+  &.feature {
+    text-align: initial;
 
-  box-shadow: 0 1px 6px 0 rgba(0 0 0 / 12%);
-  overflow: hidden;
-  background-color: light-dark(var(--color-gray-100), var(--color-gray-900));
-  color: light-dark(var(--color-dark), var(--color-light));
-  transition: all 0.25s ease-in-out;
-
-  .card-inner {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    height: 100%;
-  }
-
-  &:not(.quiet) {
-    .card-picture-container {
-      position: relative;
-      padding-bottom: 60%;
-
-      picture {
-        position: absolute;
-        inset: 0;
-        opacity: 0.85;
-        transition: opacity 0.25s ease-in-out;
-      }
-
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+    .card-content-container {
+      p {
+        padding-left: 1rem;
       }
     }
-  }
 
-  .card-content-container {
-    padding: var(--spacing-default);
-
-    :first-child {
-      margin-top: 0;
-      font-size: 16px;
+    h5 {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      opacity: 0.25;
+      margin-bottom: 15px;
+      text-align: initial;
+      margin-block-start: 0;
+      margin-block-end: 0;
     }
 
-    :last-child {
-      margin-bottom: 0;
+    h4 {
+      text-transform: uppercase;
+      font-weight: 900;
+      line-height: 30px;
+      letter-spacing: 0;
+      text-align: initial;
+      font-size: 24px;
+      color: light-dark(var(--color-light), var(--color-dark));
+
+      a {
+        text-decoration: none;
+      }
     }
 
-    &:has(+ .card-cta-container) {
-      padding: var(--spacing-default) var(--spacing-default) var(--spacing-m) var(--spacing-default);
+    .card-cta-container {
+      a {
+        text-decoration: none;
+        font-size: 0;
+        display: flex;
+        font-weight: 600;
+        margin-left: 1em;
+      }
+
+      a:hover {
+        font-size: 16px !important;
+      }
+
+      svg {
+        opacity: 1;
+        top: 6px;
+        left: 0;
+        line-height: 22px;
+        width: 50px !important;
+        max-width: 50px !important;
+        height: 22px;
+        max-height: 22px;
+        display: inline;
+        margin-left: 10px;
+      }
     }
   }
 
-  .card-cta-container {
-    padding: 0 var(--spacing-default) var(--spacing-default) var(--spacing-default);
-    margin: 0;
-    display: flex;
-    justify-content: end;
-  }
+  &.benefit {
+    .card-inner {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
 
-  &:not(.quiet):hover {
-    transform: scale(1.005);
-    box-shadow: 0 2px 8px 0 rgba(0 0 0 / 16%);
+      display: flex;
 
-    picture {
-      opacity: 1;
-    }
-  }
+      /* flex-wrap: wrap; */
+      margin-top: calc(var(--bs-gutter-y) * -1);
+      margin-right: calc(var(--bs-gutter-x) / -2);
+      margin-left: calc(var(--bs-gutter-x) / -2);
 
-  /* Variations */
-  &.center {
-    text-align: center;
-  }
+      .card-picture-container {
+        display: inline-block;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+        position: relative;
+        flex: 0 0 auto;
+        width: 25%;
+        margin-right: calc(var(--bs-gutter-x) / 2);
+        margin-left: calc(var(--bs-gutter-x) / 2);
+        margin-top: var(--bs-gutter-y);
 
-  &.quiet {
-    --spacing-default: 0;
+        img {
+          max-width: 90%;
+          width: 98px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          border: 1px solid #707070;
+          border-radius: 50%;
+          padding: 25px;
+          overflow: visible;
+        }
+      }
 
-    box-shadow: initial;
-    background-color: initial;
+      .card-content-container {
+        width: 75%;
+        padding-left: calc(var(--bs-gutter-x) / 2);
+        margin-top: var(--bs-gutter-y);
 
-    .card-content-container * {
-      margin: 6px;
+        p {
+          margin-block-start: 0;
+        }
+
+        h4 {
+          margin-block-start: 0;
+          margin-bottom: 25px;
+          padding: 5px 15px !important;
+          display: inline-block;
+          font-weight: 900;
+          font-size: 20px;
+          line-height: 30px;
+          letter-spacing: 0;
+          color: #000;
+          text-transform: uppercase;
+          background-color: #ff0;
+        }
+      }
     }
   }
 }

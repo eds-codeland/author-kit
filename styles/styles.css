@@ -1,4 +1,11 @@
 @font-face {
+  font-family: Figtree;
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("./fonts/figtree-v9-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 100 900;
