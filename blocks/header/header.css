@@ -145,6 +145,7 @@ header {
         svg {
           width: var(--logo-width);
           height: var(--logo-height);
+          color: light-dark(var(--color-dark), var(--color-light));
         }
 
         .brand-text {

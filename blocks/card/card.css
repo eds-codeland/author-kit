@@ -97,6 +97,10 @@
           border-radius: 50%;
           padding: 25px;
           overflow: visible;
+
+          @media (prefers-color-scheme: dark) {
+            filter: invert(1);
+          }
         }
       }
 

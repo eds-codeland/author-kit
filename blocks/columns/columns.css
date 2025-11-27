@@ -77,6 +77,25 @@
       align-items: start;
     }
   }
+
+  &.pa6 {
+    .col-2 {
+      padding-left: 2rem;
+
+      h2 {
+        font-weight: 900;
+        font-size: 70px;
+        line-height: 70px;
+        letter-spacing: 0;
+        color: #000;
+        text-transform: uppercase;
+      }
+
+      p {
+        padding-left: 4em;
+      }
+    }
+  }
 }
 
 @media (width >= 900px) {
